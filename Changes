@@ -1,5 +1,8 @@
 Revision history for Perl extension cPanel::3rdparty::ModuleInstaller.
 
+0.02  Sun Aug 14 03:16:20 2011
+	- Added support of installing hm_iphone module remotely
+
 0.01  Fri Jul 15 21:09:13 2011
 	- original version; created by h2xs 1.23 with options
 		-X -n cPanel::3rdparty::ModuleInstaller
