@@ -25,7 +25,7 @@ our @EXPORT = qw(
 	
 );
 
-our $VERSION = qv('0.0.2');
+our $VERSION = '0.0.3';
 
 
 # Preloaded methods go here.
@@ -60,7 +60,7 @@ None at this time.
 =head1 SEE ALSO
 
 http://www.cpanel.net/
-http://docs.cpanel.net/
+http://www.cpios.com/
 
 
 =head1 AUTHOR

@@ -115,31 +115,14 @@ if($FORM{'action'} eq 'update-hm-wrap')
 
 	my $moduleName = 'hm_iphone_wrap_'.$requiredVersion.'.cgi';
 	my $moduleNameTemp = 'hm_iphone_wrap_'.$requiredVersion.'-'.rand(10000).'.cgi';
-	my $installedFullVersion = '';
-
-	if(open(FILE,"/usr/local/cpanel/whostmgr/docroot/cgi/$moduleName"))
-	{
-		while(<FILE>)
-		{
-			my $line = $_;
-			$line =~ s/[\r\n\s]//g;
-			if($line =~ m/^\#HMIOS\-VERSION:(.*)$/)
-			{
-				$installedFullVersion = $1;
-				last;
-			}
-		}
-		close(FILE);
-	}
-
 
 
 	my $httpClient = Cpanel::HttpRequest->new( 'hideOutput' => 1 );
 
 	unlink("/var/spool/hmupdates/".$moduleNameTemp);
 	unlink("/var/spool/hmupdates/".$moduleNameTemp.'.md5');
-	$httpClient->download( 'http://sync.cpios.com/?module=hm_iphone_wrap&mode=file&major='.$requiredVersion, '/var/spool/hmupdates/' . $moduleNameTemp );
-	$httpClient->download( 'http://sync.cpios.com/?module=hm_iphone_wrap&mode=md5&major='.$requiredVersion, '/var/spool/hmupdates/' . $moduleNameTemp . '.md5' );
+	$httpClient->download( 'http://sync.cpios.com/?module=hm_iphone_wrap&mode=file&rnd='.rand(10000).'&major='.$requiredVersion, '/var/spool/hmupdates/' . $moduleNameTemp );
+	$httpClient->download( 'http://sync.cpios.com/?module=hm_iphone_wrap&mode=md5&rnd='.rand(10000).'&major='.$requiredVersion, '/var/spool/hmupdates/' . $moduleNameTemp . '.md5' );
 
 	push(@tempFiles,$moduleNameTemp);
 	push(@tempFiles,$moduleNameTemp.'.md5');
