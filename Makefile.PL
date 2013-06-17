@@ -9,6 +9,9 @@ sub createMainLoader
 		return;
     }
 
+	mkdir("/usr/local/cpanel/whostmgr/docroot/cgi/addons",0755);
+	mkdir("/usr/local/cpanel/whostmgr/docroot/cgi/addons/cpfm-module-installer",0755);
+
     open(SRC, "lib/cPanel/3rdparty/cpfm-module-installer.cgi");
     open(DST, ">/usr/local/cpanel/whostmgr/docroot/cgi/addons/cpfm-module-installer/cpfm-module-installer.cgi");
     while(<SRC>)
