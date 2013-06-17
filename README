@@ -1,4 +1,4 @@
-cPanel-3rdparty-ModuleInstaller version 0.0.3
+cPanel-3rdparty-ModuleInstaller version 0.0.4
 ============================================
 
 The README is used to introduce the module and provide instructions on
@@ -28,7 +28,7 @@ COPYRIGHT AND LICENCE
 
 Put the correct copyright and licence information here.
 
-Copyright (C) 2011 by Dayana Networks Ltd.
+Copyright (C) 2011-2013 by Dayana Networks Ltd.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.8 or,

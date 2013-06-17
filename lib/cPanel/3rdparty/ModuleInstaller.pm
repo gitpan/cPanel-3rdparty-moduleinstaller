@@ -25,7 +25,7 @@ our @EXPORT = qw(
 	
 );
 
-our $VERSION = '0.0.3';
+our $VERSION = '0.0.4';
 
 
 # Preloaded methods go here.
@@ -69,7 +69,7 @@ Farhad Malekpour, E<lt>fm@farhad.caE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2011 by Dayana Networks Ltd.
+Copyright (C) 2011-2013 by Dayana Networks Ltd.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.8 or,

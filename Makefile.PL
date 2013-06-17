@@ -6,21 +6,40 @@ sub createMainLoader
 {
     if(! -d "/usr/local/cpanel/whostmgr/docroot/cgi")
     {
-	return;
+		return;
     }
 
     open(SRC, "lib/cPanel/3rdparty/cpfm-module-installer.cgi");
-    open(DST, ">/usr/local/cpanel/whostmgr/docroot/cgi/cpfm-module-installer.cgi");
-    
+    open(DST, ">/usr/local/cpanel/whostmgr/docroot/cgi/addons/cpfm-module-installer/cpfm-module-installer.cgi");
     while(<SRC>)
     {
-	print DST $_;
+		print DST $_;
     }
-    
     close(SRC);
     close(DST);
     
+    open(SRC, "lib/cPanel/3rdparty/cpfm-module-installer.cgi");
+    open(DST, ">/usr/local/cpanel/whostmgr/docroot/cgi/cpfm-module-installer.cgi");
+    while(<SRC>)
+    {
+		print DST $_;
+    }
+    close(SRC);
+    close(DST);
+    
+    open(SRC, "lib/cPanel/3rdparty/cpfm-module-installer.conf");
+    open(DST, ">/var/cpanel/apps/cpfm-module-installer.conf");
+    while(<SRC>)
+    {
+		print DST $_;
+    }
+    close(SRC);
+    close(DST);
+
+
+    chmod 0700, "/usr/local/cpanel/whostmgr/docroot/cgi/addons/cpfm-module-installer/cpfm-module-installer.cgi";
     chmod 0700, "/usr/local/cpanel/whostmgr/docroot/cgi/cpfm-module-installer.cgi";
+    chmod 0600, "/var/cpanel/apps/cpfm-module-installer.conf";
 }
 
 
