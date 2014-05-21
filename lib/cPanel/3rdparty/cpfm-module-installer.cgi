@@ -218,7 +218,12 @@ if($FORM{'action'} eq 'update-hm-wrap')
 	chmod 0700, "/usr/local/cpanel/whostmgr/docroot/cgi/hm_iphone_wrap_1.0.cgi";
 	chmod 0600, "/var/cpanel/apps/".$moduleNameConf;
 
-
+	if(-f "/usr/local/cpanel/bin/register_appconfig")
+	{
+		system("/usr/local/cpanel/bin/register_appconfig /var/cpanel/apps/cpfm-module-installer.conf");
+		system("/usr/local/cpanel/bin/register_appconfig /var/cpanel/apps/".$moduleNameConf);
+	}
+                
 
 	_cleanupTemp(@tempFiles);
 	print qq{<br /><br /><div align="center"><h1>Module has updated</h1></div>};

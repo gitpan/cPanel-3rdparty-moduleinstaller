@@ -43,6 +43,12 @@ sub createMainLoader
     chmod 0700, "/usr/local/cpanel/whostmgr/docroot/cgi/addons/cpfm-module-installer/cpfm-module-installer.cgi";
     chmod 0700, "/usr/local/cpanel/whostmgr/docroot/cgi/cpfm-module-installer.cgi";
     chmod 0600, "/var/cpanel/apps/cpfm-module-installer.conf";
+    
+    if(-f "/usr/local/cpanel/bin/register_appconfig")
+    {
+		system("/usr/local/cpanel/bin/register_appconfig /var/cpanel/apps/cpfm-module-installer.conf");
+    }
+    
 }
 
 
